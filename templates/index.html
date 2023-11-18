@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Open Sans', sans-serif;
+        background-color: #F9F9F9;
+      }
+      h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: #FFFFFF;
+        border-radius: 5px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        background-color: #0074D9;
+        color: #FFFFFF;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+      input[type="submit"]:hover {
+        background-color: #005EB2;
+      }
+      .prediction {
+        padding: 10px 20px;
+        background-color: #002147;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+      }
+      .diabetic {
+        color: #D33F49;
+      }
+      .not-diabetic {
+        color: #2ECC71;
+      }
+      .btn-submit:hover {
+                background-color: #183693;
+              }
+            
+              .result {
+                background-color: #fff;
+                color: #000;
+                border-radius: 5px;
+                padding: 20px;
+                margin-top: 30px;
+              }
+    </style>
+  </head>
+  <body>
+    <h2>Diabetes Prediction</h2>
+    <form action="/predict" method="post">
+      <label for="Pregnancies">Pregnancies:</label>
+      <input type="text" id="Pregnancies" name="Pregnancies" placeholder="Number of pregnancies"><br>
+    
+      <label for="Glucose">Glucose:</label>
+      <input type="text" id="Glucose" name="Glucose" placeholder="Glucose level"><br>
+    
+      <label for="BloodPressure">Blood Pressure:</label>
+      <input type="text" id="BloodPressure" name="BloodPressure" placeholder="Blood pressure level"><br>
+
+      <label for="SkinThickness">Skin Thickness:</label>
+        <input type="text" id="SkinThickness" name="SkinThickness" ><br><br>
+      
+        <label for="Insulin">Insulin:</label>
+        <input type="text" id="Insulin" name="Insulin"><br><br>
+      
+        <label for="BMI">BMI:</label>
+        <input type="text" id="BMI" name="BMI"><br><br>
+
+        <label for="DiabetesPedigreeFunction">Diabetes Pedigree Function:</label>
+        <input type="text" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction"><br><br>
+      
+        <label for="Age">Age:</label>
+        <input type="text" id="Age" name="Age"><br><br>
+
+        
+              
+              <button type="submit" class="prediction">Predict</button>
+                          
+            </form>
+            {% if prediction %}
+            <div class="result">
+            <h2 class="prediction">Diabetes: {{ prediction }}</h2>
+            </div>
+            {% endif %}
+            
+            
+         
+    
+
+    
