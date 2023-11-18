@@ -10,7 +10,7 @@ Utilizes a trained machine learning model to make accurate predictions.
 
 Usage
 ----------
-Visit the website: https://rudra141.pythonanywhere.com.
+Visit the website: https://diabetescheck.onrender.com
 On the web page, you will find a form requesting information related to pregnancies, glucose level, blood pressure, skin thickness, insulin level, BMI, diabetes pedigree function, and age.
 Enter the required information into the form.
 Click the "Submit" button.
